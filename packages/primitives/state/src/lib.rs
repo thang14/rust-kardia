@@ -19,6 +19,9 @@ mod stats;
 mod trie_backend;
 mod trie_backend_essence;
 #[cfg(feature = "std")]
+mod execution;
+
+#[cfg(feature = "std")]
 pub use execution::*;
 #[cfg(feature = "std")]
 pub use std_reexport::*;
@@ -86,14 +89,4 @@ impl kp_std::fmt::Display for DefaultError {
     fn fmt(&self, f: &mut kp_std::fmt::Formatter) -> kp_std::fmt::Result {
         write!(f, "DefaultError")
     }
-}
-
-#[cfg(feature = "std")]
-mod execution {
-    use kp_trie::MemoryDB;
-
-    use crate::TrieBackend;
-
-    /// Trie backend with in-memory storage.
-    pub type InMemoryBackend<H> = TrieBackend<MemoryDB<H>, H>;
 }

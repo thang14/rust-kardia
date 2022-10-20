@@ -21,7 +21,6 @@ pub trait CodeExecutor: Sized + Send + Sync + ReadRuntimeVersion + Clone + 'stat
 		runtime_code: &RuntimeCode,
 		method: &str,
 		data: &[u8],
-		use_native: bool,
 	) -> (Result<Vec<u8>, Self::Error>, bool);
 }
 

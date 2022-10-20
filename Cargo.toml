@@ -29,6 +29,12 @@ members = [
     "packages/primitives/runtime-interface",
     "packages/txpool",
     "packages/state",
+    "packages/service",
+    "packages/evm",
+    "packages/evm/core",
+    "packages/evm/fuzzer",
+    "packages/evm/runtime",
+    "packages/evm/gasometer"
 ]
 
 [[bin]]
