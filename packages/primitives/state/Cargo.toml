@@ -20,6 +20,8 @@ kp-panic-handler = { version = "0.1.0", default-features = false, path = "../pan
 rand = { version = "0.8.5", optional = true }
 tracing = { version = "0.1.29", optional = true }
 kp-runtime = { version = "0.1.0", default-features = false, path = "../runtime" }
+kp-types = { path = "../types" }
+rlp.workspace = true
 
 [dev-dependencies]
 array-bytes = "4.1"

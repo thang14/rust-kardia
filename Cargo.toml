@@ -32,7 +32,6 @@ members = [
     "packages/service",
     "packages/evm",
     "packages/evm/core",
-    "packages/evm/fuzzer",
     "packages/evm/runtime",
     "packages/evm/gasometer"
 ]

@@ -6,5 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
 kp-core = { path = "../core"}
-rlp.workspace = true
+rlp = "0.5.1"
 rlp-derive = "0.1.0"

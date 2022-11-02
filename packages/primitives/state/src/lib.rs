@@ -53,6 +53,7 @@ pub use crate::{
     stats::{StateMachineStats, UsageInfo, UsageUnit},
     trie_backend::{TrieBackend, TrieBackendBuilder},
     trie_backend_essence::{Storage, TrieBackendStorage},
+    ext::{Ext}
 };
 
 /// In no_std we skip logs for state_machine, this macro

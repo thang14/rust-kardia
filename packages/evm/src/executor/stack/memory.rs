@@ -325,7 +325,7 @@ impl<'config> MemoryStackSubstate<'config> {
 		self.account_mut(address, backend).reset = true;
 	}
 
-	pub fn log(&mut self, address: H160, topics: Vec<H256>, data: Vec<u8>) {
+	pub fn add_log(&mut self, address: H160, topics: Vec<H256>, data: Vec<u8>) {
 		self.logs.push(Log {
 			address,
 			topics,

@@ -20,6 +20,7 @@ scale-info = { version = "2.0.0", default-features = false, features = ["derive"
 auto_impl = "0.5.0"
 kp-core = { path = "../primitives/core"}
 kp-types = { path = "../primitives/types"}
+kp-state = { path = "../primitives/state"}
 [dev-dependencies]
 criterion = "0.3"
 hex = "0.4"

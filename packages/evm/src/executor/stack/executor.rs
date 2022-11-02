@@ -350,7 +350,7 @@ pub struct StackExecutor<'config, 'precompiles, S, P> {
 	precompile_set: &'precompiles P,
 }
 
-impl<'config, 'precompiles, S: StackState<'config>, P: PrecompileSet>
+impl<'config, 'precompiles, S: kp_state::Ext<'a, H, B>, P: PrecompileSet>
 	StackExecutor<'config, 'precompiles, S, P>
 {
 	/// Return a reference of the Config.
