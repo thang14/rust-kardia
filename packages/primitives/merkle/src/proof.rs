@@ -41,12 +41,15 @@ impl Proof {
     pub fn verify(&self, root_hash: H256, leaf: &[u8]) -> Result<bool, Error> {
         let leaf_hash = leaf_hash(leaf);
         if !leaf_hash.eq(&self.left_hash) {
-            Err(Error::LeafMismatch(self.left_hash, leaf_hash))
-        } else if !self.compute_hash().eq(&root_hash) {
-            Err(Error::RootMismatch(self.left_hash, leaf_hash))
-        } else {
-            Ok(true)
+            return Err(Error::LeafMismatch(leaf_hash, self.left_hash));
         }
+
+        let computed_hash = self.compute_hash();
+        if !computed_hash.eq(&root_hash) {
+            return Err(Error::RootMismatch(root_hash, computed_hash))
+        }
+
+        Ok(true)
     }
 }
 
@@ -189,10 +192,10 @@ fn trails_from_byte_vectors(byte_vecs: Vec<Vec<u8>>) -> (Vec<ProofNode>, ProofNo
 
 #[cfg(test)]
 mod tests {
-    use std::vec;
+    use super::*;
     use kp_core::hexdisplay::AsBytesRef;
-    use subtle_encoding::hex;
-    use super::*; // TODO: use non-subtle ?
+    use std::vec;
+    use subtle_encoding::hex; // TODO: use non-subtle ?
 
     #[test]
     fn test_proof_from_byte_vectors() {
